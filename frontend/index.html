@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Children Literacy Platform</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero">
+      <div>
+        <h1>Children Literacy Platform</h1>
+        <p>Улучшенный интерфейс для регистрации, входа и проверки данных.</p>
+      </div>
+      <div class="status-panel">
+        <p><strong>Сервер:</strong> <span id="server-status">проверка...</span></p>
+        <p><strong>Пользователь:</strong> <span id="user-status">не авторизован</span></p>
+      </div>
+    </section>
+
+    <section class="grid-layout">
+      <article class="card card-auth">
+        <div class="tab-switch">
+          <button class="tab active" data-tab="login">Вход</button>
+          <button class="tab" data-tab="register">Регистрация</button>
+        </div>
+
+        <form id="login-form" class="tab-panel active">
+          <label>Почта</label>
+          <input type="email" id="login-email" placeholder="email@example.com" required>
+          <label>Пароль</label>
+          <input type="password" id="login-password" placeholder="Минимум 8 символов" required>
+          <button type="submit">Войти</button>
+        </form>
+
+        <form id="register-form" class="tab-panel">
+          <label>Почта</label>
+          <input type="email" id="register-email" placeholder="email@example.com" required>
+          <label>Пароль</label>
+          <input type="password" id="register-password" placeholder="Минимум 8 символов" minlength="8" required>
+          <label>Имя</label>
+          <input type="text" id="register-first-name" placeholder="Иван" required>
+          <label>Фамилия</label>
+          <input type="text" id="register-last-name" placeholder="Иванов" required>
+          <button type="submit">Зарегистрироваться</button>
+        </form>
+      </article>
+
+      <article class="card card-actions">
+        <h2>Действия</h2>
+        <div class="button-row">
+          <button id="profile-button">Мой профиль</button>
+          <button id="units-button">Учебные блоки</button>
+          <button id="children-button">Мои дети</button>
+        </div>
+
+        <div class="button-row">
+          <button id="logout-button" class="secondary">Выйти</button>
+        </div>
+
+        <div class="form-group">
+          <h3>Добавить ребёнка</h3>
+          <input type="text" id="child-name" placeholder="Имя ребёнка" />
+          <input type="number" id="child-age" placeholder="Возраст" min="1" />
+          <input type="text" id="child-avatar" placeholder="URL аватара (необязательно)" />
+          <button id="create-child-button" class="secondary">Создать ребёнка</button>
+        </div>
+      </article>
+    </section>
+
+    <section class="card card-result">
+      <div class="result-header">
+        <h2>Результат</h2>
+        <span id="result-type">Нет данных</span>
+      </div>
+      <pre id="result">Здесь будет вывод данных из API.</pre>
+    </section>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
