@@ -44,6 +44,8 @@ settings = get_settings()
 security = HTTPBearer()
 active_ws_connections: Dict[str, List[WebSocket]] = {}
 service = GamificationService
+# Token blacklist для logout (в продакшене заменить на Redis)
+_token_blacklist: set[str] = set()
 
 # In-memory token blacklist for logout.
 # In production, replace with Redis: https://redis.io/
