@@ -18,7 +18,7 @@ settings = get_settings()
 pwd_context = CryptContext(
     schemes=["bcrypt"],
     deprecated="auto",
-    bcrypt__rounds=settings.BCRYPT_ROUNDS
+    bcrypt__rounds=12
 )
 
 
